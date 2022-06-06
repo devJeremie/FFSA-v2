@@ -1,0 +1,29 @@
+{% extends 'baseBis.html.twig' %}
+
+{% extends 'baseBis.html.twig' %}
+
+{% block body %}
+    <link rel="stylesheet" href="{{ asset('assets/css/createArticle.css') }}">
+    <main>
+
+        {{ form_start(article,{
+             'attr': {'class': 'formArticle'}
+        }) }}
+        <h1>Créer votre nouvel article</h1>
+        {{ form_errors(article) }}
+        {{ form_row(article.title,{
+            label: 'Titre',
+            'attr': {'class': 'inputTitle'}
+        }) }}
+        {{ form_row(article.content, {
+            label: 'Contenu',
+            'attr': {'class': 'inputContent'}
+        }) }}
+        {{ form_row(article.Envoyer, {
+            'attr': {'class': 'inputEnvoyer'}
+        }) }}
+        {{ form_end(article) }}
+    </main>
+    <script src="{{ asset("assets/js/script.js") }}"></script>
+{% endblock %}
+
